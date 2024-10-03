@@ -1,4 +1,4 @@
-# Firework Chat
+# Chat App
 
 Create a simple chat window by using messages received via websocket mock.
 

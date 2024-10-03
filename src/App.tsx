@@ -29,15 +29,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Firework Chat</h1>
+      <h1>Chat App</h1>
       <Wrapper messages={messages} />
     </div>
   );
 }
-
-/*
-- virtualized list
-- zustand transient 
-
-
-*/
