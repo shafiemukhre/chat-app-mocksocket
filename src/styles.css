@@ -1,0 +1,74 @@
+#root {
+  /* max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center; */
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  font-family: monospace;
+}
+
+.Wrapper {
+  font-family: sans-serif;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #ececec;
+}
+
+.Counter {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.ChatBox {
+  background: white;
+  border: solid thin gray;
+  font-size: 0.8em;
+  height: 40vh;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.ChatBoxMessage {
+  border: solid thin gray;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ChatBoxMessage {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.ChatBoxMessage__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ChatBoxMessage__username {
+  font-weight: bold;
+  color: #333;
+}
+
+.ChatBoxMessage__timestamp {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.ChatBoxMessage__content {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.ChatBoxMessage__text {
+  margin: 0;
+  line-height: 1.4;
+}
