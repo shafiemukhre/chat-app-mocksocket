@@ -1,4 +1,4 @@
-import { memo, type FC } from "React";
+import { memo, type FC } from "react";
 
 export interface ChatBoxMessageProps {
   id: number;
