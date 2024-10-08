@@ -1,4 +1,4 @@
-import { memo } from "React";
+import { memo, type FC } from "React";
 
 export interface ChatBoxMessageProps {
   id: number;
@@ -8,7 +8,7 @@ export interface ChatBoxMessageProps {
 
 // memo is necessary here. since the the props for the old messages do not change
 //   we don't want react to rerender the message box component
-export const ChatBoxMessage: React.FC<ChatBoxMessageProps> = memo(({ username, text }) => {
+export const ChatBoxMessage: FC<ChatBoxMessageProps> = memo(({ username, text }) => {
   return (
     <div className="ChatBoxMessage">
       <div className="ChatBoxMessage__header">

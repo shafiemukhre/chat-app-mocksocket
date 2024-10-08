@@ -1,4 +1,4 @@
-import { useState, useCallback, memo} from 'react';
+import React, { useState, useCallback, memo} from 'react';
 import type { IMessage } from '../types';
 import { useAddMessageContext } from '../contexts/ChatContextProvider';
 
