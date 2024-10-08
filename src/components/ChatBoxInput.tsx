@@ -1,13 +1,13 @@
-import React, { useState, useCallback, memo} from 'react';
+import { useState, useCallback, memo, type FormEvent, type ChangeEvent, type FC} from 'react';
 import type { IMessage } from '../types';
 import { useAddMessageContext } from '../contexts/ChatContextProvider';
 
-export const ChatBoxInput: React.FC = memo(() => {
+export const ChatBoxInput: FC = memo(() => {
   // TODO: Allow user to submit their own message to the ChatBox. ✅
   const [message, setMessage] = useState('');
   const { addMessage } = useAddMessageContext();
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
     if (message.trim()) {
       const newMessage: IMessage = {
@@ -21,7 +21,7 @@ export const ChatBoxInput: React.FC = memo(() => {
     }
   }, [message, addMessage]);
 
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   }, []);
 
