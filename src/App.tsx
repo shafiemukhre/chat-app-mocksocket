@@ -1,17 +1,19 @@
 import "./styles.css";
 import "./socket";
 import { SocketEventsEnum } from "./constants";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Wrapper } from "./components/Wrapper";
 import type { IMessage } from "./types";
+import { useAddMessageContext } from "./contexts/ChatContextProvider";
 
 
 export default function App() {
-  const [messages, setMessages] = useState<IMessage[]>([]);
+  const { addMessage } = useAddMessageContext();
 
   useEffect(() => {
+    // TODO: Subscribe to messages
     const handleMessageReceived = (event: CustomEvent<IMessage>) => {
-      setMessages((prevMessages) => [...prevMessages, event.detail]);
+      addMessage(event.detail);
     };
 
     document.addEventListener(
@@ -25,12 +27,12 @@ export default function App() {
         handleMessageReceived as EventListener
       );
     };
-  }, []);
+  }, [addMessage]);
 
   return (
     <div className="App">
       <h1>Chat App</h1>
-      <Wrapper messages={messages} />
+      <Wrapper/>
     </div>
   );
 }

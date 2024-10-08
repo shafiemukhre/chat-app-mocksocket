@@ -1,5 +1,5 @@
 {
-  "name": "Chat App",
+  "name": "Chat App with Mock Socket",
   "private": true,
   "version": "0.0.0",
   "type": "module",
