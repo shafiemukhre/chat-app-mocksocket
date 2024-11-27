@@ -4,11 +4,12 @@ import { SocketEventsEnum } from "./constants";
 import { useEffect } from "react";
 import { Wrapper } from "./components/Wrapper";
 import type { IMessage } from "./types";
-import { useAddMessageContext } from "./contexts/ChatContextProvider";
+import { useMessageActions } from "./contexts/ChatContextProvider";
 
-
+// App component is expected to rerender when the context is updated. no need React.memo
+// interesting that React scan can't see the App component's being rerender but React Devtools can
 export default function App() {
-  const { addMessage } = useAddMessageContext();
+  const { addMessage } = useMessageActions();
 
   useEffect(() => {
     // TODO: Subscribe to messages

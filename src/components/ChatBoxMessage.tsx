@@ -6,8 +6,11 @@ export interface ChatBoxMessageProps {
   text: string;
 }
 
-// memo is necessary here. since the the props for the old messages do not change
+// memo is NECESSARY here. since the the props for the old messages do not change
 //   we don't want react to rerender the message box component
+// without React.memo, all ChatBoxMessage components will be rerender even though props remains the same.
+//    we don't want that. So by adding React.memo, old ChatBoxMessage will not be rerender
+//    because their props remains the same
 export const ChatBoxMessage: FC<ChatBoxMessageProps> = memo(({ username, text }) => {
   return (
     <div className="ChatBoxMessage">
@@ -20,3 +23,5 @@ export const ChatBoxMessage: FC<ChatBoxMessageProps> = memo(({ username, text })
     </div>
   );
 });
+
+ChatBoxMessage.displayName = 'ChatBoxMessage';

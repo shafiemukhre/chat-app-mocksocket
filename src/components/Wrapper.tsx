@@ -2,9 +2,9 @@ import type { FC} from "react";
 import { ChatBox } from "./ChatBox";
 import { ChatBoxInput } from "./ChatBoxInput";
 import { Counter } from "./Counter";
-import React from "react";
 
-export const Wrapper: FC = React.memo(() => {
+// Wrapper is just a div element with no access to context. it will not rerender, React.memo not needed
+export const Wrapper: FC = () => {
   return (
     <div className="Wrapper">
       <Counter />
@@ -12,4 +12,6 @@ export const Wrapper: FC = React.memo(() => {
       <ChatBoxInput />
     </div>
   );
-});
+};
+
+Wrapper.displayName = 'Wrapper';
