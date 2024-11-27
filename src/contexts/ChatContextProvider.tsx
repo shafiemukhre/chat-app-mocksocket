@@ -5,10 +5,6 @@ interface MessagesContextType {
   messages: IMessage[];
 }
 
-interface AddMessageContextType {
-  addMessage: (message: IMessage) => void;
-}
-
 interface ChatContextProviderProps {
   children: ReactNode;
 }
@@ -63,13 +59,3 @@ export function useMessageActions() {
   }
   return context;
 }
-
-// export function useAddMessageContext() {
-//   const context = useContext(AddMessageContext);
-
-//   if (context === undefined) {
-//     throw new Error("useAddMessageContext must be used within a ChatContextProvider.");
-//   }
-
-//   return context;
-// }
